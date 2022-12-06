@@ -40,7 +40,7 @@ h1 {
   line-height: 1.1;
 }
 
-button {
+.btn {
   border-radius: 8px;
   border: 1px solid transparent;
   padding: 0.6em 1.2em;
@@ -52,12 +52,12 @@ button {
   transition: border-color 0.25s;
 }
 
-button:hover {
+.btn:hover {
   border-color: #646cff;
 }
 
-button:focus,
-button:focus-visible {
+.btn:focus,
+.btn:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
@@ -71,7 +71,7 @@ button:focus-visible {
     color: #747bff;
   }
 
-  button {
+  .btn {
     background-color: #f9f9f9;
   }
 
@@ -86,4 +86,43 @@ button:focus-visible {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.backdrop .modal {
+  background-color: #e1e1e1;
+  color: #1e1e1e;
+  padding: 2rem;
+  border-radius: 75vw;
+  max-height: 90vh;
+  position: relative;
+
+}
+
+.backdrop,
+.modal,
+.modal-close {
+  --size: 1.25rem;
+  width: var(--size);
+  height: calc(var(--size) * 0.1);
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  color: black;
+  position: absolute;
+  top: 0.75rem;
+  height: 0.75rem;
+  display: flex;
+}
+
+.backdrop,
+.modal,
+.modal-close::before .backdrop,
+.modal,
+.modal-close::after {
+  content: '';
+  position: absolute;
+  width: 1.25rem;
+  height: 0.125rem;
+  background-color: currentColor;
+  border-radius: 0.125rem;
 }
